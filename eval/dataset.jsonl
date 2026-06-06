@@ -1,0 +1,12 @@
+{"question": "How much does the Growth plan cost per seat per month?", "expected_source": "nimbus_billing.md", "reference_answer": "$49 per seat per month.", "answerable": true}
+{"question": "How often does data refresh on the Enterprise edition?", "expected_source": "nimbus_overview.md", "reference_answer": "Every 15 minutes.", "answerable": true}
+{"question": "What encryption algorithm is used for data at rest?", "expected_source": "nimbus_security.md", "reference_answer": "AES-256.", "answerable": true}
+{"question": "What is the API rate limit on the Starter plan?", "expected_source": "nimbus_api.md", "reference_answer": "100 requests per minute.", "answerable": true}
+{"question": "How long is the free trial and which edition does it use?", "expected_source": "nimbus_billing.md", "reference_answer": "A 14-day free trial of the Growth edition.", "answerable": true}
+{"question": "Is Nimbus HIPAA compliant?", "expected_source": "nimbus_security.md", "reference_answer": "No, Nimbus is not HIPAA compliant and must not store protected health information.", "answerable": true}
+{"question": "How many items does a list API endpoint return per page?", "expected_source": "nimbus_api.md", "reference_answer": "At most 50 items per page.", "answerable": true}
+{"question": "Which payment methods can Enterprise accounts use that Starter and Growth cannot?", "expected_source": "nimbus_billing.md", "reference_answer": "ACH bank transfer or wire.", "answerable": true}
+{"question": "How many data sources can the Starter edition connect?", "expected_source": "nimbus_overview.md", "reference_answer": "Up to 3 connected data sources.", "answerable": true}
+{"question": "How often are encryption keys rotated?", "expected_source": "nimbus_security.md", "reference_answer": "Every 90 days.", "answerable": true}
+{"question": "What is the personal mobile phone number of the Nimbus CEO?", "expected_source": null, "reference_answer": "I don't have enough information to answer that.", "answerable": false}
+{"question": "Does Nimbus offer a discount for paying with cryptocurrency?", "expected_source": null, "reference_answer": "I don't have enough information to answer that.", "answerable": false}
