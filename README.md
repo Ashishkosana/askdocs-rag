@@ -30,7 +30,7 @@ That's what this project measures.
    (.md/.txt/.pdf)                  MiniLM                (cosine)
 
                    ┌──────────── query time ────────────┐
-   question ─▶ embed ─▶ retrieve top-k ─▶ build grounded prompt ─▶ Claude ─▶ answer
+   question ─▶ embed ─▶ retrieve top-k ─▶ build grounded prompt ─▶ an LLM ─▶ answer
                           (Chroma)                                  (Opus 4.8)   + citations
                                                                                  + usage/cost
 
@@ -41,7 +41,7 @@ That's what this project measures.
 ```
 
 Embeddings run **locally** (sentence-transformers), so indexing and retrieval cost
-nothing and work offline. Only answer generation and judging call the Claude API.
+nothing and work offline. Only answer generation and judging call an LLM.
 
 ## Quickstart
 
@@ -88,7 +88,7 @@ ABSTENTION (unanswerable questions)
 - **Local embeddings, hosted generation.** Retrieval should be cheap and private;
   reasoning is where a frontier model earns its cost. Splitting the two keeps query
   cost near zero and indexing fully offline.
-- **Dependency injection over globals.** The embedder, vector store, and Claude client
+- **Dependency injection over globals.** The embedder, vector store, and an LLM client
   are injected into `RagPipeline`, so the whole pipeline is unit-testable without a
   network or a model download (see `tests/`).
 - **Cosine similarity + normalized embeddings.** Stable, scale-independent relevance.
@@ -107,7 +107,7 @@ src/askdocs/
   embeddings.py     # local sentence-transformers embedder (Protocol-based)
   store.py          # Chroma vector store wrapper
   retrieve.py       # query embedding -> nearest chunks
-  generate.py       # grounded Claude answer + citations
+  generate.py       # grounded an LLM answer + citations
   observability.py  # token/cost/latency accounting
   pipeline.py       # ingest -> retrieve -> generate orchestration
   api.py            # FastAPI service
@@ -122,5 +122,5 @@ tests/              # 19 tests, no API key / model download required
 
 ## Tech stack
 
-Python 3.12 · uv · Claude (Anthropic SDK, Opus 4.8) · sentence-transformers ·
+Python 3.12 · uv · an LLM (Anthropic SDK, Opus 4.8) · sentence-transformers ·
 ChromaDB · FastAPI · Pydantic · pytest · ruff · GitHub Actions
